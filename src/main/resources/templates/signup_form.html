@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <title>Registration Java</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: #FCDDF5;
+        }
+        input{
+            border: 10px solid #5C5C5C;
+        }
+    </style>
 </head>
 <body>
     <div class="container text-center">
         <div>
             <h1>User Registration - Sign Up</h1>
+        </div>
+        <div style="margin-top: 30px;">
+            <!--        <img class="img-fluid" th:src="@{/images/haha.jpg}" />-->
+            <img th:src="@{/images/rrr.png}" style="width: 150px;height: 150px;"/>
         </div>
         <form th:action="@{/process_register}" method="post" style="max-width:600px; margin:0 auto" th:object="${user}">
             <div class="m-3">
@@ -18,7 +30,7 @@
                         <input type="email" class="form-control" th:field="*{email}" required />
                     </div>
                 </div>
-
+                <br>
                 <div class="form-group row">
                     <label class="col-form-label col-4">Password</label>
                     <div class="col-8">
@@ -26,7 +38,7 @@
                                required minlength="6" maxlength="10"/>
                     </div>
                 </div>
-
+                <br>
                 <div class="form-group row">
                     <label class="col-form-label col-4">FirstName</label>
                     <div class="col-8">
@@ -34,21 +46,20 @@
                                required minlength="2" maxlength="20"/>
                     </div>
                 </div>
-
+                <br>
                 <div class="form-group row">
                     <label class="col-form-label col-4">LastName</label>
                     <div class="col-8">
-                        <input type="text" class="form-control" th:field="*{lastName}"
+                        <input  type="text" class="form-control" th:field="*{lastName}"
                                required minlength="2" maxlength="20"/>
                     </div>
                 </div>
-
+                <br>
                 <div>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                 </div>
             </div>
         </form>
     </div>
-
 </body>
 </html>

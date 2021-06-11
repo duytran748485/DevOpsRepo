@@ -11,8 +11,16 @@
     <style>
         .tx{
             color: #FFFFFF;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+        }
+        .rem{
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .cuc{
+            border: 1px solid #FFFFFF;
         }
     </style>
 </head>
@@ -22,11 +30,11 @@
 <!--        <img class="img-fluid" th:src="@{/images/haha.jpg}" />-->
         <img th:src="@{/images/haha.jpg}" style="width: 150px;height: 150px;"/>
     </div>
-    <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto;">
+    <form class="cuc" th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto;">
 
         <div th:if="${param.error}">
-            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
-
+<!--            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>-->
+            <p class="text-danger">Email or Password not valid</p>
 
         </div>
 
@@ -34,15 +42,15 @@
             <p class="text-warning">You have been logged out.</p>
         </div>
 
-        <div class="border border-secondary p-3 rounded">
-            <p class="tx">Access to Shopme Control Panel</p>
+        <div class="border border-secondary p-3 rounded ">
+            <p class="tx">Access to User Account Management</p>
             <p>
                 <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
             </p>
             <p>
                 <input type="password" name="password" class="form-control" placeholder="Password" required />
             </p>
-            <p>
+            <p class="rem">
                 <input type="checkbox" name="remember-me" />&nbsp;Remember Me
             </p>
             <p>

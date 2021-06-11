@@ -51,6 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 //        http.authorizeRequests().antMatchers("/**").permitAll().anyRequest()
 //                .authenticated().and().csrf().disable();
+        http.rememberMe().key("uniqueAndSecret").tokenValiditySeconds(1296000);
         http.authorizeRequests().antMatchers("/list_users")
                 .authenticated()
                 .anyRequest()
@@ -61,7 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("email")
                 .permitAll()
                 .defaultSuccessUrl("/list_users").permitAll()
-                .and().rememberMe().key("AbcdEfghIjklmNopQrsTuvXyz_0123456789")
                 .and().logout().logoutSuccessUrl("/").permitAll();
 
 
